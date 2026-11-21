@@ -1,0 +1,1574 @@
+
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio XI RPL 2 — Chika, Alis, Delima & Pebrianto</title>
+    
+    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome untuk Ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Konfigurasi Palet Warna Coklat Hangat -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        alabaster: '#FAF6F0',   // Latar Utama Lembut
+                        sand: '#F2E8DC',        // Latar Sekunder Pasir Beige
+                        espresso: '#2C1A12',    // Teks Utama & Kontras Gelap
+                        mocha: '#5C3D2E',       // Coklat Moka Sekunder
+                        caramel: '#8D5B4C',     // Karamel Hangat
+                        bronze: '#C58940',      // Aksen Emas Perunggu
+                        creamPaper: '#FFFDF9'   // Kertas Kartu About Me
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'Georgia', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'brown-sm': '0 4px 14px -2px rgba(44, 26, 18, 0.08)',
+                        'brown-md': '0 12px 28px -6px rgba(44, 26, 18, 0.14)',
+                        'brown-lg': '0 22px 42px -10px rgba(44, 26, 18, 0.22)',
+                        'mac-win': '0 20px 45px -12px rgba(44, 26, 18, 0.28)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAF6F0;
+            color: #2C1A12;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            padding-bottom: 96px; /* Ruang untuk macOS Floating Dock */
+        }
+
+        /* Pola tekstur editorial halus di latar */
+        .editorial-bg {
+            background-image: 
+                radial-gradient(circle at 12% 18%, rgba(197, 137, 64, 0.12) 0%, transparent 38%),
+                radial-gradient(circle at 88% 72%, rgba(141, 91, 76, 0.12) 0%, transparent 42%);
+        }
+
+        /* Animasi Bintang Retro macOS */
+        @keyframes twinkle {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.9; }
+            50% { transform: scale(1.22) rotate(12deg); opacity: 1; }
+        }
+        .star-twinkle {
+            animation: twinkle 3.2s ease-in-out infinite;
+        }
+        .star-twinkle-delay {
+            animation: twinkle 3.8s ease-in-out 1.4s infinite;
+        }
+
+        /* Efek macOS Floating Dock */
+        .mac-dock-item {
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), margin 0.25s ease;
+        }
+        .mac-dock-item:hover {
+            transform: translateY(-10px) scale(1.18);
+        }
+
+        /* Animasi Kartu & Transisi */
+        .member-showcase-card {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+        .member-showcase-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .portfolio-card {
+            transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* Custom Scrollbar Coklat */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F2E8DC;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #8D5B4C;
+            border-radius: 6px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2C1A12;
+        }
+    </style>
+</head>
+<a href="../index.html" class="btn-about">Fashion</a>
+
+<style>
+  .btn-about {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  .btn-about:hover {
+    background-color: #45a049;
+  }
+</style>
+
+<body class="editorial-bg antialiased selection:bg-caramel selection:text-alabaster">
+
+    <!-- ==================== 1. HEADER & NAVIGASI ATAS ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-40 bg-alabaster/90 backdrop-blur-md border-b border-espresso/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Kelompok XI RPL 2 -->
+                <a href="#beranda" class="flex items-center gap-3 group">
+                    <div class="w-11 h-11 rounded-2xl bg-espresso text-bronze flex items-center justify-center font-serif font-bold text-xl shadow-brown-sm group-hover:bg-caramel group-hover:text-alabaster transition-colors">
+                        RPL2
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-xl sm:text-2xl tracking-tight text-espresso block leading-none">
+                            Portofolio<span class="text-bronze">.</span>XI RPL 2
+                        </span>
+                        <span class="text-[11px] font-semibold uppercase tracking-[0.16em] text-mocha">4 Anggota • 1 Ruang Karya</span>
+                    </div>
+                </a>
+                
+
+                <!-- Navigasi Desktop -->
+                <nav class="hidden md:flex items-center gap-7">
+                    <a href="#beranda" class="text-sm font-bold text-espresso hover:text-caramel transition-colors">Beranda</a>
+                    <a href="#profil-anggota" class="text-sm font-bold text-espresso hover:text-caramel transition-colors">Profil 4 Anggota</a>
+                    <a href="#tempat-portofolio" class="text-sm font-bold text-espresso hover:text-caramel transition-colors">Tempat Portofolio</a>
+                    <a href="#playlist-kelompok" class="text-sm font-bold text-espresso hover:text-caramel transition-colors">Fav Songs</a>
+                    <a href="#kontak" class="text-sm font-bold text-espresso hover:text-caramel transition-colors">Kontak</a>
+                </nav>
+
+               
+                <!-- Tombol Aksi Cepat Header -->
+                <div class="hidden md:flex items-center gap-3">
+                    <button type="button" onclick="openAddProjectModal()" class="px-5 py-2.5 rounded-full bg-caramel text-alabaster text-xs font-bold shadow-brown-sm hover:bg-espresso hover:-translate-y-0.5 transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-plus"></i>
+                        <span>Tambah Karya</span>
+                    </button>
+                </div>
+
+                <!-- Tombol Menu Mobile -->
+                <button id="mobile-menu-btn" aria-label="Buka Menu" class="md:hidden p-2.5 rounded-xl bg-sand text-espresso hover:bg-caramel hover:text-alabaster transition-colors">
+                    <i class="fa-solid fa-bars text-lg" id="hamburger-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Dropdown Mobile -->
+        <div id="mobile-menu" class="hidden md:hidden bg-alabaster border-b border-espresso/15 px-4 pt-2 pb-5 space-y-2 shadow-brown-md">
+            <a href="#beranda" class="mobile-link block px-4 py-2.5 rounded-xl font-bold text-espresso hover:bg-sand">Beranda</a>
+            <a href="#profil-anggota" class="mobile-link block px-4 py-2.5 rounded-xl font-bold text-espresso hover:bg-sand">Profil 4 Anggota</a>
+            <a href="#tempat-portofolio" class="mobile-link block px-4 py-2.5 rounded-xl font-bold text-espresso hover:bg-sand">Tempat Portofolio</a>
+            <a href="#playlist-kelompok" class="mobile-link block px-4 py-2.5 rounded-xl font-bold text-espresso hover:bg-sand">Fav Songs Kelompok</a>
+            <a href="#kontak" class="mobile-link block px-4 py-2.5 rounded-xl font-bold text-espresso hover:bg-sand">Kontak</a>
+            <a href="#index" class="text-sm font-bold text-espresso hover:text-caramel transition-colors">index Fashion</a>
+            <div class="pt-2">
+                <button type="button" onclick="openAddProjectModal()" class="w-full py-3 rounded-full bg-espresso text-alabaster font-bold text-sm">
+                    + Tambah Karya Portofolio
+                </button>
+            </div>
+        </div>
+    </header>
+
+    
+
+    <!-- ==================== 2. HERO SECTION RETRO MACOS EDITORIAL ==================== -->
+    <section id="beranda" class="pt-28 pb-14 lg:pt-36 lg:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
+        <!-- Dekorasi Bintang Putih & Emas -->
+        <svg class="w-7 h-7 text-bronze star-twinkle absolute top-28 left-6 hidden sm:block" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L14.8 8.8L23 12L14.8 15.2L12 23L9.2 15.2L1 12L9.2 8.8L12 1Z"/>
+        </svg>
+        <svg class="w-6 h-6 text-caramel star-twinkle-delay absolute top-36 right-10 hidden sm:block" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 1L14.8 8.8L23 12L14.8 15.2L12 23L9.2 15.2L1 12L9.2 8.8L12 1Z"/>
+        </svg>
+
+        <div class="bg-sand/85 border border-espresso/15 rounded-[2.5rem] p-6 sm:p-10 lg:p-14 shadow-brown-lg relative overflow-hidden">
+            <!-- Efek Aksen Kolase Majalah Hitam-Putih + Coklat Hangat di Latar Belakang -->
+            <div class="absolute -right-12 -top-12 w-72 h-72 rounded-full bg-caramel/15 blur-2xl pointer-events-none"></div>
+            <div class="absolute -left-12 -bottom-12 w-72 h-72 rounded-full bg-bronze/20 blur-2xl pointer-events-none"></div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center relative z-10">
+                <!-- Kolom Kiri: Tipografi Judul "portofolio" ala Referensi -->
+                <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-espresso text-alabaster text-xs font-bold tracking-wider uppercase shadow-brown-sm">
+                        <span class="w-2 h-2 rounded-full bg-bronze animate-ping"></span>
+                        Rekayasa Perangkat Lunak • Kelas XI RPL 2
+                    </div>
+
+                    <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-espresso leading-[1.12]">
+                        Portofolio <span class="italic text-caramel">Kolektif</span><br>
+                        Empat Kreator <span class="underline decoration-bronze decoration-4 underline-offset-8">XI RPL 2</span>
+                    </h1>
+
+                    <p class="text-mocha text-sm sm:text-base lg:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Satu ruang digital terpadu milik <strong class="text-espresso">Chika Abelia</strong>, <strong class="text-espresso">Alis Rahmawati</strong>, <strong class="text-espresso">Delima Dwi Agustin</strong>, dan <strong class="text-espresso">Febrianto</strong>. Dilengkapi biodata <em>About Me</em> bergaya jendela macOS, galeri proyek RPL, serta fitur unggah foto langsung!
+                    </p>
+
+                    <!-- Tombol Utama Interaktif -->
+                    <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-3.5">
+                        <a href="#profil-anggota" class="px-7 py-3.5 rounded-full bg-espresso text-alabaster font-bold text-sm shadow-brown-md hover:bg-caramel hover:-translate-y-0.5 transition-all flex items-center gap-2.5">
+                            <i class="fa-solid fa-id-card text-bronze"></i>
+                            <span>Lihat Profil 4 Anggota</span>
+                        </a>
+                        <a href="#tempat-portofolio" class="px-7 py-3.5 rounded-full bg-creamPaper text-espresso border-2 border-espresso font-bold text-sm hover:bg-sand hover:border-caramel hover:text-caramel hover:-translate-y-0.5 transition-all flex items-center gap-2.5">
+                            <i class="fa-solid fa-folder-open text-caramel"></i>
+                            <span>Tempat Portofolio</span>
+                        </a>
+                         <!-- Tombol About Us Warna Coklat -->
+                        <a href="../index1.html" class="btn-about">
+                            <span>Fashion Keren Dan Kece</span>
+                        </a>
+                         <style>
+
+        
+
+
+                        
+  .btn-about {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #492419; /* Karamel hangat */
+  color: #FAF6F0; /* Teks putih gading */
+    text-decoration: none;
+    border-radius: 50px; /* Membuat sudutnya melengkung halus / pil */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px -2px rgba(44, 26, 18, 0.15);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Efek saat kursor menyentuh tombol (Hover) */
+  .btn-about:hover {
+    background-color: #2C1A12; /* Berubah menjadi coklat espresso gelap */
+    color: #FAF6F0;
+    transform: translateY(-2px); /* Tombol sedikit terangkat */
+    box-shadow: 0 6px 20px -2px rgba(44, 26, 18, 0.25);
+  }
+
+                        </style>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Mini macOS Window Preview 4 Anggota -->
+                <div class="lg:col-span-5">
+                    <div class="bg-creamPaper rounded-3xl border border-espresso/15 shadow-mac-win overflow-hidden">
+                        <!-- Bar Atas macOS -->
+                        <div class="bg-sand px-4 py-3 border-b border-espresso/10 flex items-center justify-between">
+                            <div class="flex items-center gap-2">
+                                <span class="w-3 h-3 rounded-full bg-[#FF5F56] inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#FFBD2E] inline-block"></span>
+                                <span class="w-3 h-3 rounded-full bg-[#27C93F] inline-block"></span>
+                            </div>
+                            <span class="text-[11px] font-bold text-mocha tracking-wide">XI_RPL_2_Team.app</span>
+                            <i class="fa-solid fa-star text-bronze text-xs"></i>
+                        </div>
+
+                        <!-- Grid 4 Kartu Cepat Anggota -->
+                        <div class="p-5 grid grid-cols-2 gap-3.5 bg-alabaster/70">
+                            <button type="button" onclick="selectMemberFilter('chika', true)" class="text-left p-3.5 rounded-2xl bg-creamPaper border border-espresso/10 hover:border-caramel hover:shadow-brown-sm transition-all group">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-sand text-caramel text-[10px] font-extrabold">01</span>
+                                    <i class="fa-solid fa-film text-bronze text-xs group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <p class="font-bold text-espresso text-sm truncate">Chika Abelia</p>
+                                <p class="text-[11px] text-mocha truncate">Drakor & Dimsum!</p>
+                            </button>
+
+                            <button type="button" onclick="selectMemberFilter('alis', true)" class="text-left p-3.5 rounded-2xl bg-creamPaper border border-espresso/10 hover:border-caramel hover:shadow-brown-sm transition-all group">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-sand text-caramel text-[10px] font-extrabold">02</span>
+                                    <i class="fa-solid fa-microphone-lines text-bronze text-xs group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <p class="font-bold text-espresso text-sm truncate">Alis Rahmawati</p>
+                                <p class="text-[11px] text-mocha truncate">Menyanyi & Matcha</p>
+                            </button>
+
+                            <button type="button" onclick="selectMemberFilter('delima', true)" class="text-left p-3.5 rounded-2xl bg-creamPaper border border-espresso/10 hover:border-caramel hover:shadow-brown-sm transition-all group">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-sand text-caramel text-[10px] font-extrabold">03</span>
+                                    <i class="fa-solid fa-book-open text-bronze text-xs group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <p class="font-bold text-espresso text-sm truncate">Delima Dwi A.</p>
+                                <p class="text-[11px] text-mocha truncate">Novel & Brownies</p>
+                            </button>
+
+                            <button type="button" onclick="selectMemberFilter('febrianto', true)" class="text-left p-3.5 rounded-2xl bg-creamPaper border border-espresso/10 hover:border-caramel hover:shadow-brown-sm transition-all group">
+                                <div class="flex items-center justify-between mb-1.5">
+                                    <span class="px-2 py-0.5 rounded-md bg-sand text-caramel text-[10px] font-extrabold">04</span>
+                                    <i class="fa-solid fa-person-running text-bronze text-xs group-hover:scale-110 transition-transform"></i>
+                                </div>
+                                <p class="font-bold text-espresso text-sm truncate">Febrianto</p>
+                                <p class="text-[11px] text-mocha truncate">Running & Wagyu</p>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 3. PROFIL 4 ANGGOTA (MACOS WINDOW + ABOUT ME CARD) ==================== -->
+    <section id="profil-anggota" class="py-16 lg:py-24 bg-sand/75 border-y border-espresso/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Judul Section & Tombol Filter Anggota -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                <div class="space-y-2">
+                    <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-caramel">Biodata Lengkap • XI RPL 2</span>
+                    <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-espresso">
+                        Profil 4 Anggota Kelompok
+                    </h2>
+                    <p class="text-mocha text-sm sm:text-base max-w-2xl">
+                        Setiap profil hadir dalam tampilan jendela macOS & kartu <strong>ABOUT ME!</strong>. Klik tombol <strong>"Ganti Foto"</strong> pada masing-masing jendela untuk memasang foto asli dari HP/laptop Anda secara langsung!
+                    </p>
+                </div>
+
+                <!-- Tombol Pilih Anggota -->
+                <div class="flex flex-wrap gap-2" role="tablist" aria-label="Pilih Anggota XI RPL 2">
+                    <button type="button" data-profile-filter="all" class="profile-tab-btn active px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-espresso text-alabaster shadow-brown-sm transition-all">
+                        Semua (4)
+                    </button>
+                    <button type="button" data-profile-filter="chika" class="profile-tab-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-creamPaper text-espresso border border-espresso/15 hover:bg-caramel hover:text-alabaster transition-all">
+                        Chika
+                    </button>
+                    <button type="button" data-profile-filter="alis" class="profile-tab-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-creamPaper text-espresso border border-espresso/15 hover:bg-caramel hover:text-alabaster transition-all">
+                        Alis
+                    </button>
+                    <button type="button" data-profile-filter="delima" class="profile-tab-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-creamPaper text-espresso border border-espresso/15 hover:bg-caramel hover:text-alabaster transition-all">
+                        Delima
+                    </button>
+                    <button type="button" data-profile-filter="febrianto" class="profile-tab-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-creamPaper text-espresso border border-espresso/15 hover:bg-caramel hover:text-alabaster transition-all">
+                        Febrianto
+                    </button>
+                </div>
+            </div>
+
+            <!-- Grid Kartu Profil 4 Anggota (Bergaya Gambar Referensi) -->
+            <div id="members-container" class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+                <!-- Dirender secara dinamis melalui JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 4. TEMPAT PORTOFOLIO (GALERI KARYA XI RPL 2) ==================== -->
+    <section id="tempat-portofolio" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header Tempat Portofolio -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+            <div class="space-y-2">
+                <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-caramel">Showcase Proyek & Tugas RPL</span>
+                <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-espresso">
+                    Tempat Portofolio XI RPL 2
+                </h2>
+                <p class="text-mocha text-sm sm:text-base max-w-2xl">
+                    Kumpulan karya pemrograman web, desain antarmuka UI/UX, aplikasi kasir/sekolah, hingga proyek multimedia dari Chika, Alis, Delima, dan Febrianto.
+                </p>
+            </div>
+
+            <!-- Tombol Tambah Karya Baru -->
+            <button type="button" onclick="openAddProjectModal()" class="self-start md:self-auto px-6 py-3.5 rounded-full bg-espresso text-alabaster font-bold text-sm shadow-brown-md hover:bg-caramel hover:-translate-y-0.5 transition-all flex items-center gap-2.5">
+                <i class="fa-solid fa-folder-plus text-bronze"></i>
+                <span>+ Tambah Karya Portofolio</span>
+            </button>
+        </div>
+
+        <!-- Bar Filter Kategori & Anggota -->
+        <div class="bg-sand/85 border border-espresso/15 rounded-3xl p-5 sm:p-6 mb-10 space-y-4 shadow-brown-sm">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-mocha flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-caramel"></i> Kategori Proyek:
+                </span>
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" data-proj-cat="all" class="proj-cat-btn active px-4 py-2 rounded-full text-xs font-bold bg-espresso text-alabaster shadow-brown-sm transition-all">
+                        Semua Kategori
+                    </button>
+                    <button type="button" data-proj-cat="Web Development" class="proj-cat-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-caramel hover:text-alabaster transition-all">
+                        Web Development
+                    </button>
+                    <button type="button" data-proj-cat="UI/UX Design" class="proj-cat-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-caramel hover:text-alabaster transition-all">
+                        UI/UX Design
+                    </button>
+                    <button type="button" data-proj-cat="Aplikasi Sekolah" class="proj-cat-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-caramel hover:text-alabaster transition-all">
+                        Aplikasi Sekolah
+                    </button>
+                    <button type="button" data-proj-cat="Multimedia" class="proj-cat-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-caramel hover:text-alabaster transition-all">
+                        Multimedia
+                    </button>
+                </div>
+            </div>
+
+            <div class="border-t border-espresso/10"></div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <span class="text-xs font-extrabold uppercase tracking-wider text-mocha flex items-center gap-2">
+                    <i class="fa-solid fa-user-tag text-caramel"></i> Pembuat Karya:
+                </span>
+                <div class="flex flex-wrap gap-2">
+                    <button type="button" data-proj-member="all" class="proj-member-btn active px-4 py-2 rounded-full text-xs font-bold bg-caramel text-alabaster shadow-brown-sm transition-all">
+                        Semua Anggota
+                    </button>
+                    <button type="button" data-proj-member="chika" class="proj-member-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-espresso hover:text-alabaster transition-all">
+                        Chika Abelia
+                    </button>
+                    <button type="button" data-proj-member="alis" class="proj-member-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-espresso hover:text-alabaster transition-all">
+                        Alis Rahmawati
+                    </button>
+                    <button type="button" data-proj-member="delima" class="proj-member-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-espresso hover:text-alabaster transition-all">
+                        Delima Dwi A.
+                    </button>
+                    <button type="button" data-proj-member="febrianto" class="proj-member-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-espresso hover:text-alabaster transition-all">
+                        Pebrianto
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Status & Reset Filter -->
+        <div class="flex items-center justify-between mb-6 text-xs sm:text-sm text-mocha">
+            <p id="portfolio-count-text">Menampilkan <strong class="text-espresso">6</strong> karya portofolio</p>
+            <button type="button" id="reset-portfolio-filter" class="hidden text-caramel font-bold hover:text-espresso underline">
+                Reset Filter
+            </button>
+        </div>
+
+        <!-- Grid Kartu Karya Portofolio -->
+        <div id="portfolio-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+            <!-- Kartu proyek dirender via JS -->
+        </div>
+    </section>
+
+    <!-- ==================== 5. PLAYLIST LAGU FAVORIT 4 ANGGOTA (DOCK MUSIC WIDGET) ==================== -->
+    <section id="playlist-kelompok" class="py-16 bg-sand/75 border-t border-espresso/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-espresso text-alabaster rounded-[2.25rem] p-7 sm:p-10 lg:p-12 shadow-brown-lg relative overflow-hidden">
+                <div class="absolute -right-16 -bottom-16 w-64 h-64 rounded-full bg-bronze/15 blur-2xl pointer-events-none"></div>
+
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8 relative z-10">
+                    <div>
+                        <span class="inline-block px-3.5 py-1 rounded-full bg-caramel/35 border border-bronze/40 text-bronze text-xs font-bold uppercase tracking-wider mb-2">
+                            <i class="fa-solid fa-music mr-1.5"></i> Soundtrack Kelompok XI RPL 2
+                        </span>
+                        <h2 class="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-alabaster">
+                            Lagu Favorit Empat Anggota
+                        </h2>
+                    </div>
+
+                    <!-- Pemutar Nada Web Audio API (Bebas URL eksternal) -->
+                    <div id="now-playing-box" class="bg-alabaster/10 border border-alabaster/15 rounded-2xl px-5 py-3.5 flex items-center gap-4">
+                        <button type="button" id="toggle-synth-btn" onclick="toggleAudioPreview()" class="w-11 h-11 rounded-full bg-bronze text-espresso font-bold flex items-center justify-center hover:bg-alabaster transition-colors shrink-0" aria-label="Putar Melodi">
+                            <i class="fa-solid fa-play" id="synth-play-icon"></i>
+                        </button>
+                        <div class="min-w-0">
+                            <p class="text-[11px] uppercase tracking-wider text-bronze font-bold" id="now-playing-owner">Klik Lagu di Bawah</p>
+                            <p class="text-sm font-bold text-alabaster truncate" id="now-playing-title">Love, maybe, love yourselft, haunted, o allah</p>
+                                                       
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4 Kartu Lagu Favorit Sesuai Biodata Gambar -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 relative z-10">
+                    <button type="button" onclick="playMemberSong('Chika Abelia', 'Love, maybe - Secret Number', [329.63, 392.00, 440.00, 493.88])" class="text-left p-5 rounded-2xl bg-alabaster/10 hover:bg-caramel/40 border border-alabaster/15 transition-all group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-bronze text-espresso text-[11px] font-extrabold">Chika Abelia</span>
+                            <i class="fa-solid fa-volume-high text-bronze group-hover:scale-110 transition-transform"></i>
+                            <audio id="playerUtama" controls>
+                    <source id="sumberLagu" src="../assets/audio/chika audio.mp3" type="audio/mpeg">
+                    </audio>
+
+                        </div>
+                        <p class="font-serif font-bold text-lg text-alabaster leading-snug">Love, maybe</p>
+                        <p class="text-xs text-sand/80 mt-1">Secret Number</p>
+                    </button>
+
+                    <button type="button" onclick="playMemberSong('Alis Rahmawati', 'Love your self - Justin Bieber', [261.63, 329.63, 392.00, 329.63])" class="text-left p-5 rounded-2xl bg-alabaster/10 hover:bg-caramel/40 border border-alabaster/15 transition-all group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-bronze text-espresso text-[11px] font-extrabold">Alis Rahmawati</span>
+                            <i class="fa-solid fa-volume-high text-bronze group-hover:scale-110 transition-transform"></i>
+                            <audio id="playerKedua" controls>
+                            <source id="sumberLagu" src="../assets/audio/alis audio.mp3" type="audio/mp3">
+                            </audio>
+                            
+                        </div>
+                        <p class="font-serif font-bold text-lg text-alabaster leading-snug">Love your self</p>
+                        <p class="text-xs text-sand/80 mt-1">Justin Bieber</p>
+                        
+                    </button>
+
+                    <button type="button" onclick="playMemberSong('Delima Dwi Agustin', 'haunted - Beyonce', [220.00, 261.63, 329.63, 440.00])" class="text-left p-5 rounded-2xl bg-alabaster/10 hover:bg-caramel/40 border border-alabaster/15 transition-all group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-bronze text-espresso text-[11px] font-extrabold">Delima Dwi Agustin</span>
+                            <i class="fa-solid fa-volume-high text-bronze group-hover:scale-110 transition-transform"></i>
+                            <audio id="playerKetiga" controls>
+                            <source id= "sumberLagu" src="../assets/audio/delima audio.mp3" type="audio/mp3">
+                            </audio>
+                            
+                        </div>
+                        <p class="font-serif font-bold text-lg text-alabaster leading-snug">haunted</p>
+                        <p class="text-xs text-sand/80 mt-1">Beyonce</p>
+                    </button>
+
+                    <button type="button" onclick="playMemberSong('Pebrianto', 'O ALLAH', [293.66, 349.23, 440.00, 523.25])" class="text-left p-5 rounded-2xl bg-alabaster/10 hover:bg-caramel/40 border border-alabaster/15 transition-all group">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="px-2.5 py-1 rounded-full bg-bronze text-espresso text-[11px] font-extrabold">Febrianto</span>
+                            <i class="fa-solid fa-volume-high text-bronze group-hover:scale-110 transition-transform"></i>
+                          <audio id="playerkeempat" controls>
+                            <source id= "sumberLagu" src="../assets/audio/pebri audio.mp3" type="audio/mpeg">
+                            </audio>
+                              
+                        </div>
+                        <p class="font-serif font-bold text-lg text-alabaster leading-snug">O ALLAH</p>
+                        <p class="text-xs text-sand/80 mt-1">O Allah</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 6. KONTAK & BUKU TAMU KELOMPOK ==================== -->
+    <section id="kontak" class="py-16 lg:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div class="lg:col-span-5 space-y-5">
+                <span class="text-xs font-extrabold uppercase tracking-[0.2em] text-caramel">Hubungi Kelompok Kami</span>
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-espresso leading-tight">
+                    Tinggalkan Pesan atau Apresiasi untuk XI RPL 2
+                </h2>
+                <p class="text-mocha text-sm sm:text-base leading-relaxed">
+                    Ingin berdiskusi tentang proyek web, memberi masukan untuk tugas portofolio Chika, Alis, Delima, dan Febrianto? Kirimkan pesan melalui formulir ini.
+                </p>
+
+                <div class="p-5 rounded-3xl bg-sand border border-espresso/10 space-y-3">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-espresso text-bronze flex items-center justify-center">
+                            <i class="fa-solid fa-school"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-mocha font-semibold">Kompetensi Keahlian</p>
+                            <p class="text-sm font-bold text-espresso">XI RPL 2 — Rekayasa Perangkat Lunak</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-xl bg-caramel text-alabaster flex items-center justify-center">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-mocha font-semibold">Anggota Kelompok</p>
+                            <p class="text-sm font-bold text-espresso">Chika • Alis • Delima • Febrianto</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7">
+                <form id="contact-form" class="bg-creamPaper border border-espresso/15 rounded-3xl p-6 sm:p-8 shadow-brown-md space-y-5">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                            <label for="sender-name" class="block text-xs font-bold uppercase tracking-wider text-mocha mb-2">Nama Pengirim</label>
+                            <input type="text" id="sender-name" required placeholder="Masukkan nama Anda..." class="w-full px-4 py-3 rounded-xl bg-sand/60 border border-espresso/15 text-espresso focus:outline-none focus:border-caramel">
+                        </div>
+                        <div>
+                            <label for="target-member" class="block text-xs font-bold uppercase tracking-wider text-mocha mb-2">Ditujukan Kepada</label>
+                            <select id="target-member" class="w-full px-4 py-3 rounded-xl bg-sand/60 border border-espresso/15 text-espresso font-semibold focus:outline-none focus:border-caramel">
+                                <option value="Semua Anggota XI RPL 2">Semua Anggota XI RPL 2</option>
+                                <option value="Chika Abelia">Chika Abelia</option>
+                                <option value="Alis Rahmawati">Alis Rahmawati</option>
+                                <option value="Delima Dwi Agustin">Delima Dwi Agustin</option>
+                                <option value="Febrianto">Pebrianto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="sender-message" class="block text-xs font-bold uppercase tracking-wider text-mocha mb-2">Pesan / Kesan</label>
+                        <textarea id="sender-message" rows="3" required placeholder="Tulis pesan untuk kelompok kami..." class="w-full px-4 py-3 rounded-xl bg-sand/60 border border-espresso/15 text-espresso focus:outline-none focus:border-caramel resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full py-3.5 px-6 rounded-full bg-espresso text-alabaster font-bold text-sm shadow-brown-sm hover:bg-caramel transition-colors flex items-center justify-center gap-2">
+                        <span>Kirim Pesan Sekarang</span>
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+
+                    <div id="contact-toast" class="hidden p-4 rounded-2xl bg-emerald-900/10 border border-emerald-800/25 text-emerald-950 text-sm flex items-center gap-3">
+                        <i class="fa-solid fa-circle-check text-emerald-700 text-lg"></i>
+                        <p id="contact-toast-text" class="font-semibold">Pesan berhasil dikirim!</p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== 7. FLOATING MACOS DOCK (BAWAH LAYAR) ==================== -->
+    <div class="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 px-3 sm:px-4 py-2.5 rounded-3xl bg-espresso/85 backdrop-blur-xl border border-bronze/35 shadow-brown-lg flex items-center gap-2 sm:gap-3.5" aria-label="macOS Floating Dock">
+        <a href="#beranda" title="Beranda" class="mac-dock-item w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-amber-300 to-amber-500 text-espresso flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-house text-base sm:text-lg"></i>
+        </a>
+        <a href="#profil-anggota" title="Profil 4 Anggota (About Me)" class="mac-dock-item w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-sky-300 to-blue-500 text-white flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-address-card text-base sm:text-lg"></i>
+        </a>
+        <a href="#tempat-portofolio" title="Tempat Portofolio" class="mac-dock-item w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-orange-300 to-caramel text-white flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-folder-open text-base sm:text-lg"></i>
+        </a>
+        <button type="button" onclick="openAddProjectModal()" title="Tambah Karya Baru" class="mac-dock-item w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-rose-300 to-pink-500 text-white flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-camera-retro text-base sm:text-lg"></i>
+        </button>
+        <a href="#playlist-kelompok" title="Fav Songs Kelompok" class="mac-dock-item w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-emerald-300 to-emerald-600 text-white flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-music text-base sm:text-lg"></i>
+        </a>
+        <div class="w-px h-8 bg-alabaster/25 mx-0.5"></div>
+        <a href="#kontak" title="Kirim Pesan" class="mac-dock-item w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-bronze to-amber-700 text-alabaster flex items-center justify-center shadow-md">
+            <i class="fa-solid fa-envelope text-base sm:text-lg"></i>
+        </a>
+    </div>
+
+    <!-- ==================== MODAL 1: DETAIL PROYEK PORTOFOLIO ==================== -->
+    <div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true">
+        <div id="project-modal-backdrop" class="fixed inset-0 bg-espresso/75 backdrop-blur-sm"></div>
+        <div class="relative w-full max-w-xl bg-creamPaper rounded-3xl border border-espresso/15 shadow-brown-lg overflow-hidden z-10 max-h-[90vh] flex flex-col">
+            <!-- Bar macOS -->
+            <div class="bg-sand px-5 py-3.5 border-b border-espresso/10 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="closeProjectModal()" class="w-3.5 h-3.5 rounded-full bg-[#FF5F56] hover:opacity-80" aria-label="Tutup"></button>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#27C93F]"></span>
+                </div>
+                <span id="modal-proj-cat" class="text-xs font-extrabold uppercase tracking-wider text-caramel">Kategori</span>
+                <button type="button" onclick="closeProjectModal()" class="text-espresso hover:text-caramel text-sm font-bold">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Visual Proyek -->
+            <div id="modal-proj-visual" class="h-48 sm:h-56 bg-sand border-b border-espresso/10 overflow-hidden shrink-0"></div>
+
+            <!-- Konten Detail -->
+            <div class="p-6 sm:p-7 overflow-y-auto space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                    <span id="modal-proj-author" class="px-3.5 py-1 rounded-full bg-espresso text-bronze text-xs font-bold">Pembuat</span>
+                    <span id="modal-proj-year" class="text-xs font-bold text-mocha">2026</span>
+                </div>
+
+                <h3 id="modal-proj-title" class="font-serif text-2xl font-bold text-espresso">Judul Proyek</h3>
+                <p id="modal-proj-desc" class="text-sm text-mocha leading-relaxed">Deskripsi lengkap proyek.</p>
+
+                <div>
+                    <p class="text-xs font-extrabold uppercase tracking-wider text-espresso mb-2">Teknologi / Tools:</p>
+                    <div id="modal-proj-tech" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <div class="pt-3 flex justify-end">
+                    <button type="button" onclick="closeProjectModal()" class="px-6 py-2.5 rounded-full bg-espresso text-alabaster text-xs sm:text-sm font-bold hover:bg-caramel transition-colors">
+                        Tutup Jendela
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== MODAL 2: TAMBAH KARYA PORTOFOLIO BARU ==================== -->
+    <div id="add-project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6" role="dialog" aria-modal="true">
+        <div onclick="closeAddProjectModal()" class="fixed inset-0 bg-espresso/75 backdrop-blur-sm"></div>
+        <div class="relative w-full max-w-lg bg-creamPaper rounded-3xl border border-espresso/15 shadow-brown-lg overflow-hidden z-10 max-h-[90vh] flex flex-col">
+            <div class="bg-sand px-5 py-3.5 border-b border-espresso/10 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="closeAddProjectModal()" class="w-3.5 h-3.5 rounded-full bg-[#FF5F56]"></button>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#FFBD2E]"></span>
+                    <span class="w-3.5 h-3.5 rounded-full bg-[#27C93F]"></span>
+                </div>
+                <span class="text-xs font-extrabold text-espresso">Tambah_Karya_Baru.app</span>
+                <button type="button" onclick="closeAddProjectModal()" class="text-espresso hover:text-caramel">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <form id="add-project-form" class="p-6 overflow-y-auto space-y-4">
+                <h3 class="font-serif text-2xl font-bold text-espresso">Tambah Karya ke Portofolio</h3>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-mocha mb-1.5">Judul Karya / Proyek</label>
+                    <input type="text" id="new-proj-title" required placeholder="Contoh: Website Kasir Kantin XI RPL 2" class="w-full px-4 py-2.5 rounded-xl bg-sand/60 border border-espresso/15 text-sm text-espresso focus:outline-none focus:border-caramel">
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-mocha mb-1.5">Pembuat Karya</label>
+                        <select id="new-proj-member" class="w-full px-3.5 py-2.5 rounded-xl bg-sand/60 border border-espresso/15 text-sm text-espresso font-semibold focus:outline-none focus:border-caramel">
+                            <option value="chika">Chika Abelia</option>
+                            <option value="alis">Alis Rahmawati</option>
+                            <option value="delima">Delima Dwi Agustin</option>
+                            <option value="febrianto">Pebrianto</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold uppercase tracking-wider text-mocha mb-1.5">Kategori</label>
+                        <select id="new-proj-cat" class="w-full px-3.5 py-2.5 rounded-xl bg-sand/60 border border-espresso/15 text-sm text-espresso font-semibold focus:outline-none focus:border-caramel">
+                            <option value="Web Development">Web Development</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Aplikasi Sekolah">Aplikasi Sekolah</option>
+                            <option value="Multimedia">Multimedia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-mocha mb-1.5">Deskripsi Singkat Karya</label>
+                    <textarea id="new-proj-desc" rows="3" required placeholder="Jelaskan fitur utama atau tujuan proyek ini..." class="w-full px-4 py-2.5 rounded-xl bg-sand/60 border border-espresso/15 text-sm text-espresso focus:outline-none focus:border-caramel resize-none"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase tracking-wider text-mocha mb-1.5">Bahasa / Tools (pisahkan dengan koma)</label>
+                    <input type="text" id="new-proj-tech" required placeholder="HTML, CSS, JavaScript, Figma" class="w-full px-4 py-2.5 rounded-xl bg-sand/60 border border-espresso/15 text-sm text-espresso focus:outline-none focus:border-caramel">
+                </div>
+
+                <div class="pt-2 flex items-center justify-end gap-3">
+                    <button type="button" onclick="closeAddProjectModal()" class="px-5 py-2.5 rounded-full border border-espresso/20 text-espresso text-xs font-bold hover:bg-sand">
+                        Batal
+                    </button>
+                    <button type="submit" class="px-6 py-2.5 rounded-full bg-espresso text-alabaster text-xs font-bold hover:bg-caramel transition-colors">
+                        Simpan ke Portofolio
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- ==================== JAVASCRIPT LOGIKA & DATA LENGKAP ==================== -->
+    <script>
+        // 1. DATA 4 ANGGOTA KELOMPOK XI RPL 2 (Persis Sesuai 4 Gambar Referensi)
+        const membersData = [
+            {
+                id: 'chika',
+                nama: 'CHIKA ABELIA',
+                kelas: 'XI RPL 2',
+                hobi: 'Menonton (drakor)',
+                foodFav: 'DIMSUM!',
+                drinkFav: 'ICE MILK',
+                favSong: 'Love, maybe - secret number',
+                windowStyle: 'collage-2x2', // Gaya kolase 2x2 macOS window + penjepit kertas
+                clipColor: '#D97B84',
+                badgeBg: '#F6E2E0',
+                customPhotoUrl: null,
+                // Ilustrasi potret gadis berhijab hitam ceria dalam gaya kolase 2x2 seperti gambar 1
+                defaultSvg: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <g id="chika-base">
+                                <rect width="200" height="150" fill="#D8CFC4"/>
+                                <rect x="120" y="15" width="80" height="75" fill="#B5A492" opacity="0.55"/>
+                                <path d="M0 150 L0 60 Q28 75 22 150 Z" fill="#181516"/>
+                                <!-- Hijab Hitam & Baju Garis -->
+                                <path d="M55 150 C58 105, 165 105, 175 150 Z" fill="#232024"/>
+                                <ellipse cx="105" cy="74" rx="44" ry="52" fill="#1D1B1E"/>
+                                <ellipse cx="108" cy="76" rx="31" ry="37" fill="#F3C9B4"/>
+                                <path d="M77 65 C85 38, 132 38, 139 65 C125 50, 92 50, 77 65 Z" fill="#1D1B1E"/>
+                                <!-- Alis & Pipi Merona -->
+                                <path d="M88 64 Q95 60 102 64" fill="none" stroke="#3B2A23" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M114 64 Q121 60 128 64" fill="none" stroke="#3B2A23" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="88" cy="83" r="6" fill="#E89A8C" opacity="0.45"/>
+                                <circle cx="127" cy="83" r="6" fill="#E89A8C" opacity="0.45"/>
+                            </g>
+                        </defs>
+                        <!-- Panel 1: Senyum Manis -->
+                        <g transform="translate(0,0)">
+                            <use href="#chika-base"/>
+                            <circle cx="95" cy="73" r="3.2" fill="#2C1A12"/>
+                            <circle cx="121" cy="73" r="3.2" fill="#2C1A12"/>
+                            <path d="M99 93 Q108 101 117 93" fill="none" stroke="#C86D68" stroke-width="2.6" stroke-linecap="round"/>
+                        </g>
+                        <!-- Panel 2: Pipi Menggembung Imut -->
+                        <g transform="translate(200,0)">
+                            <use href="#chika-base"/>
+                            <circle cx="95" cy="73" r="3.2" fill="#2C1A12"/>
+                            <circle cx="121" cy="73" r="3.2" fill="#2C1A12"/>
+                            <circle cx="108" cy="94" r="4" fill="#D4746E"/>
+                        </g>
+                        <!-- Panel 3: Kedip Sebelah (Wink) -->
+                        <g transform="translate(0,150)">
+                            <use href="#chika-base"/>
+                            <circle cx="95" cy="73" r="3.2" fill="#2C1A12"/>
+                            <path d="M116 73 Q121 69 126 73" fill="none" stroke="#2C1A12" stroke-width="2.4" stroke-linecap="round"/>
+                            <path d="M99 93 Q108 101 117 93" fill="none" stroke="#C86D68" stroke-width="2.6" stroke-linecap="round"/>
+                        </g>
+                        <!-- Panel 4: Pose Ceria + Bintang Putih -->
+                        <g transform="translate(200,150)">
+                            <use href="#chika-base"/>
+                            <circle cx="95" cy="73" r="3.2" fill="#2C1A12"/>
+                            <circle cx="121" cy="73" r="3.2" fill="#2C1A12"/>
+                            <ellipse cx="109" cy="95" rx="4.5" ry="5.5" fill="#D4746E"/>
+                            <path d="M162 85 L165 94 L174 97 L165 100 L162 109 L159 100 L150 97 L159 94 Z" fill="#FFFDF9"/>
+                        </g>
+                        <!-- Garis Pemisah Grid 2x2 -->
+                        <line x1="200" y1="0" x2="200" y2="300" stroke="#FAF6F0" stroke-width="2.5"/>
+                        <line x1="0" y1="150" x2="400" y2="150" stroke="#FAF6F0" stroke-width="2.5"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'alis',
+                nama: 'ALIS RAHMAWATI',
+                kelas: 'XI RPL 2',
+                hobi: 'MENYANYI',
+                foodFav: 'SEAFOOD',
+                drinkFav: 'MATCHA',
+                favSong: 'Love your self - Justin Bieber',
+                windowStyle: 'collage-2x2', // Gaya kolase 2x2 macOS window seperti gambar 2
+                clipColor: '#C58940',
+                badgeBg: '#F7E3D4',
+                customPhotoUrl: null,
+                // Ilustrasi potret gadis berhijab pink pastel dengan pita kotak-kotak 2x2
+                defaultSvg: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <g id="alis-panel">
+                                <rect width="200" height="150" fill="#EDE3DC"/>
+                                <!-- Hijab Pink Pastel -->
+                                <path d="M48 150 C52 104, 152 104, 158 150 Z" fill="#DFC3C2"/>
+                                <ellipse cx="95" cy="74" rx="42" ry="50" fill="#D6B5B4"/>
+                                <ellipse cx="92" cy="77" rx="30" ry="36" fill="#F5D0BE"/>
+                                <path d="M62 68 C70 40, 115 40, 122 68 C110 52, 76 52, 62 68 Z" fill="#D6B5B4"/>
+                                <!-- Pita Kotak-Kotak di Samping Hijab -->
+                                <g transform="translate(126, 62) rotate(12)">
+                                    <polygon points="0,0 -14,-10 -14,10" fill="#C97A82"/>
+                                    <polygon points="0,0 14,-10 14,10" fill="#C97A82"/>
+                                    <circle cx="0" cy="0" r="4" fill="#F7E3D4"/>
+                                </g>
+                                <!-- Tangan Menopang Pipi & Gelang Mutiara -->
+                                <path d="M42 150 L58 102 Q66 95 72 105 L65 150 Z" fill="#F5D0BE"/>
+                                <ellipse cx="54" cy="122" rx="10" ry="4" fill="#FFFDF9" stroke="#C58940" stroke-width="1.2"/>
+                                <!-- Mata & Bibir -->
+                                <circle cx="80" cy="74" r="3.3" fill="#2C1A12"/>
+                                <circle cx="104" cy="74" r="3.3" fill="#2C1A12"/>
+                                <circle cx="76" cy="84" r="5.5" fill="#E8948C" opacity="0.45"/>
+                                <circle cx="108" cy="84" r="5.5" fill="#E8948C" opacity="0.45"/>
+                                <path d="M85 94 Q92 99 99 94" fill="none" stroke="#C46262" stroke-width="2.5" stroke-linecap="round"/>
+                            </g>
+                        </defs>
+                        <use href="#alis-panel" x="0" y="0"/>
+                        <use href="#alis-panel" x="200" y="0"/>
+                        <use href="#alis-panel" x="0" y="150"/>
+                        <use href="#alis-panel" x="200" y="150"/>
+                        <line x1="200" y1="0" x2="200" y2="300" stroke="#FAF6F0" stroke-width="2.5"/>
+                        <line x1="0" y1="150" x2="400" y2="150" stroke="#FAF6F0" stroke-width="2.5"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'delima',
+                nama: 'DELIMA DWI AGUSTIN',
+                kelas: 'XI RPL 2',
+                hobi: 'MEMBACA NOVEL',
+                foodFav: 'BROWNIES & SATE',
+                drinkFav: 'CHOCOLATE ICE',
+                favSong: 'haunted - Beyonce',
+                windowStyle: 'cut-copy-bar', // Gaya window dengan menu Cut | Copy | Paste | Replace seperti gambar 3
+                clipColor: '#8D5B4C',
+                badgeBg: '#F4CEB4',
+                customPhotoUrl: null,
+                // Ilustrasi potret gadis berhijab gelap bernuansa hangat seperti gambar 3
+                defaultSvg: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="delimaWarmBg" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#E6C3A5"/>
+                                <stop offset="100%" stop-color="#B88B6E"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="300" fill="url(#delimaWarmBg)"/>
+                        <!-- Cahaya Hangat Alam -->
+                        <circle cx="80" cy="60" r="95" fill="#FFFDF9" opacity="0.28"/>
+                        <!-- Tali Tas Putih & Jaket Gelap -->
+                        <path d="M85 300 C95 210, 305 210, 315 300 Z" fill="#3B3336"/>
+                        <path d="M125 218 L112 300 L132 300 L142 222 Z" fill="#FAF6F0"/>
+                        <path d="M275 218 L288 300 L268 300 L258 222 Z" fill="#FAF6F0"/>
+                        <!-- Hijab Gelap & Wajah -->
+                        <ellipse cx="200" cy="145" rx="78" ry="92" fill="#2A2326"/>
+                        <ellipse cx="200" cy="150" rx="56" ry="66" fill="#EFC3A8"/>
+                        <path d="M144 134 C158 84, 242 84, 256 134 C234 106, 166 106, 144 134 Z" fill="#2A2326"/>
+                        <!-- Tangan di Samping Pipi -->
+                        <path d="M132 225 L145 148 Q156 138 164 152 L156 225 Z" fill="#EFC3A8"/>
+                        <!-- Mata & Senyum Manis -->
+                        <circle cx="182" cy="148" r="5" fill="#2C1A12"/>
+                        <circle cx="222" cy="148" r="5" fill="#2C1A12"/>
+                        <path d="M173 136 Q182 131 191 136" fill="none" stroke="#2C1A12" stroke-width="2.8" stroke-linecap="round"/>
+                        <path d="M213 136 Q222 131 231 136" fill="none" stroke="#2C1A12" stroke-width="2.8" stroke-linecap="round"/>
+                        <path d="M188 180 Q202 191 216 180" fill="none" stroke="#B85D58" stroke-width="3.2" stroke-linecap="round"/>
+                    </svg>
+                `
+            },
+            {
+                id: 'Pebrianto',
+                nama: 'PEBRIANTO',
+                kelas: 'XI RPL 2',
+                hobi: 'RUNNING',
+                foodFav: 'STEAK WAGYU',
+                drinkFav: 'AIR PUTIH',
+                favSong: 'O ALLAH',
+                windowStyle: 'anime-right', // Gaya window anime cowok berkacamata kemeja putih dasi hitam seperti gambar 4
+                clipColor: '#2C1A12',
+                badgeBg: '#F6E2E0',
+                customPhotoUrl: null,
+                // Ilustrasi cowok anime berkacamata kemeja putih dasi hitam seperti gambar 4
+                defaultSvg: `
+                    <svg viewBox="0 0 400 300" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="300" fill="#3C587A"/>
+                        <!-- Kemeja Putih & Dasi Hitam -->
+                        <path d="M85 300 C95 225, 305 225, 315 300 Z" fill="#F4F6F9"/>
+                        <polygon points="168,225 200,256 182,272 156,236" fill="#DCE2EC"/>
+                        <polygon points="232,225 200,256 218,272 244,236" fill="#DCE2EC"/>
+                        <polygon points="191,252 209,252 213,300 187,300" fill="#232733"/>
+                        <!-- Leher & Wajah Anime -->
+                        <rect x="180" y="186" width="40" height="48" rx="14" fill="#F2D2C0"/>
+                        <path d="M148 122 C148 75, 252 75, 252 122 C252 168, 224 198, 200 202 C176 198, 148 168, 148 122 Z" fill="#F9DFD0"/>
+                        <!-- Rambut Anime Biru Gelap Berponi -->
+                        <path d="M138 132 C132 58, 268 58, 262 132 C256 105, 242 95, 232 122 C222 98, 208 96, 200 124 C192 96, 178 98, 168 122 C158 95, 144 105, 138 132 Z" fill="#24293E"/>
+                        <!-- Kacamata Bingkai Tipis -->
+                        <rect x="158" y="128" width="34" height="22" rx="5" fill="none" stroke="#5A4A42" stroke-width="2.5"/>
+                        <rect x="208" y="128" width="34" height="22" rx="5" fill="none" stroke="#5A4A42" stroke-width="2.5"/>
+                        <line x1="192" y1="138" x2="208" y2="138" stroke="#5A4A42" stroke-width="2.5"/>
+                        <!-- Mata Anime & Ekspresi Tenang -->
+                        <ellipse cx="175" cy="139" rx="5" ry="4" fill="#4A3F55"/>
+                        <ellipse cx="225" cy="139" rx="5" ry="4" fill="#4A3F55"/>
+                        <circle cx="173" cy="137" r="1.5" fill="#FFFFFF"/>
+                        <circle cx="223" cy="137" r="1.5" fill="#FFFFFF"/>
+                        <path d="M192 176 Q200 180 208 176" fill="none" stroke="#B97A6D" stroke-width="2.4" stroke-linecap="round"/>
+                    </svg>
+                `
+            }
+        ];
+
+        // 2. DATA TEMPAT PORTOFOLIO KARYA XI RPL 2
+        let portfolioProjects = [
+            {
+                id: 101,
+                title: "K-Drama Tracker & Watchlist Web",
+                category: "Web Development",
+                memberId: "chika",
+                year: "2026",
+                shortDesc: "Aplikasi web pencatat daftar tontonan drama Korea lengkap dengan rating episode dan pengingat jadwal tayang.",
+                fullDesc: "Dibuat oleh Chika Abelia menggunakan HTML, CSS, dan JavaScript LocalStorage. Pengguna dapat mencatat drama yang sedang ditonton, memberi ulasan singkat, serta memfilter berdasarkan genre romantis maupun komedi.",
+                tech: ["HTML5", "CSS3", "JavaScript", "LocalStorage"],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#2C1A12"/>
+                        <rect x="45" y="30" width="310" height="160" rx="16" fill="#FAF6F0"/>
+                        <rect x="65" y="52" width="115" height="115" rx="12" fill="#8D5B4C"/>
+                        <polygon points="112,92 112,126 140,109" fill="#FAF6F0"/>
+                        <rect x="198" y="60" width="135" height="16" rx="8" fill="#2C1A12"/>
+                        <rect x="198" y="88" width="110" height="12" rx="6" fill="#C58940"/>
+                        <rect x="198" y="114" width="125" height="10" rx="5" fill="#5C3D2E" opacity="0.5"/>
+                        <rect x="198" y="138" width="85" height="26" rx="13" fill="#8D5B4C"/>
+                    </svg>
+                `
+            },
+            {
+                id: 102,
+                title: "UI/UX Aplikasi Pemesanan Matcha & Cafe",
+                category: "UI/UX Design",
+                memberId: "alis",
+                year: "2026",
+                shortDesc: "Desain antarmuka mobile app pemesanan minuman matcha artisan & seafood bistro dengan warna lembut.",
+                fullDesc: "Dirancang oleh Alis Rahmawati di Figma. Mengusung konsep antarmuka ramah pengguna dengan kustomisasi level gula, pilihan topping, serta pemutar musik latar akustik saat menunggu pesanan.",
+                tech: ["Figma", "UI/UX Prototyping", "Design System"],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#F2E8DC"/>
+                        <rect x="115" y="22" width="170" height="176" rx="22" fill="#FFFDF9" stroke="#2C1A12" stroke-width="3"/>
+                        <circle cx="200" cy="85" r="34" fill="#8D5B4C"/>
+                        <circle cx="200" cy="85" r="22" fill="#C58940"/>
+                        <rect x="145" y="134" width="110" height="12" rx="6" fill="#2C1A12"/>
+                        <rect x="155" y="156" width="90" height="24" rx="12" fill="#8D5B4C"/>
+                    </svg>
+                `
+            },
+            {
+                id: 103,
+                title: "Perpustakaan Digital & Ulasan Novel",
+                category: "Aplikasi Sekolah",
+                memberId: "delima",
+                year: "2026",
+                shortDesc: "Sistem katalog peminjaman buku dan jurnal bacaan novel siswa kelas XI RPL 2 berbasis web.",
+                fullDesc: "Dikembangkan oleh Delima Dwi Agustin untuk memudahkan teman-teman kelas mencatat buku novel favorit, menulis kutipan berkesan, dan memantau status peminjaman buku secara rapi.",
+                tech: ["HTML", "Tailwind CSS", "JavaScript", "PHP/MySQL"],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#8D5B4C"/>
+                        <rect x="85" y="38" width="110" height="144" rx="10" fill="#FAF6F0"/>
+                        <rect x="205" y="38" width="110" height="144" rx="10" fill="#F2E8DC"/>
+                        <rect x="105" y="65" width="70" height="12" rx="6" fill="#2C1A12"/>
+                        <rect x="105" y="88" width="60" height="8" rx="4" fill="#5C3D2E"/>
+                        <rect x="225" y="65" width="70" height="12" rx="6" fill="#C58940"/>
+                        <rect x="225" y="88" width="65" height="8" rx="4" fill="#5C3D2E"/>
+                    </svg>
+                `
+            },
+            {
+                id: 104,
+                title: "RunTrack XI RPL 2 — Kalkulator Pace Lari",
+                category: "Web Development",
+                memberId: "febrianto",
+                year: "2026",
+                shortDesc: "Aplikasi web penghitung kecepatan lari (pace), jarak tempuh, dan target hidrasi air putih harian.",
+                fullDesc: "Karya Febrianto yang menggabungkan hobi running dengan pemrograman JavaScript. Membantu pelari menghitung rata-rata menit per kilometer, estimasi kalori terbakar, serta pengingat minum air putih.",
+                tech: ["JavaScript ES6", "HTML5", "CSS Grid", "Chart Logic"],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#5C3D2E"/>
+                        <rect x="55" y="32" width="290" height="156" rx="18" fill="#FAF6F0"/>
+                        <polyline points="85,145 145,105 205,120 265,68 315,82" fill="none" stroke="#C58940" stroke-width="5" stroke-linecap="round"/>
+                        <circle cx="265" cy="68" r="7" fill="#2C1A12"/>
+                        <rect x="85" y="55" width="95" height="14" rx="7" fill="#2C1A12"/>
+                    </svg>
+                `
+            },
+            {
+                id: 105,
+                title: "Portal Kasir & Menu Kantin Digital",
+                category: "Aplikasi Sekolah",
+                memberId: "chika",
+                year: "2025",
+                shortDesc: "Sistem kasir sederhana untuk mencatat pesanan makanan & minuman kantin sekolah secara otomatis.",
+                fullDesc: "Proyek kolaborasi tugas RPL yang dipimpin Chika Abelia dan Alis Rahmawati untuk menghitung total belanja otomatis, mencetak struk digital, dan merekap laporan penjualan harian.",
+                tech: ["HTML", "CSS", "JavaScript", "DOM Manipulation"],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#2C1A12"/>
+                        <rect x="70" y="30" width="260" height="160" rx="16" fill="#F2E8DC"/>
+                        <rect x="92" y="52" width="120" height="45" rx="8" fill="#2C1A12"/>
+                        <rect x="92" y="110" width="55" height="55" rx="8" fill="#C58940"/>
+                        <rect x="157" y="110" width="55" height="55" rx="8" fill="#8D5B4C"/>
+                        <rect x="228" y="52" width="80" height="113" rx="10" fill="#FFFDF9"/>
+                    </svg>
+                `
+            },
+            {
+                id: 106,
+                title: "Poster & Zine Digital Kelas XI RPL 2",
+                category: "Multimedia",
+                memberId: "delima",
+                year: "2025",
+                shortDesc: "Desain majalah dinding digital & kartu profil retro macOS untuk dokumentasi angkatan RPL.",
+                fullDesc: "Dirancang oleh Delima Dwi Agustin dan Febrianto dengan inspirasi kolase majalah monokrom dipadukan elemen jendela komputer klasik dan tipografi modern.",
+                tech: ["Canva Pro", "Illustrator", "Layout Editorial"],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#F2E8DC"/>
+                        <rect x="80" y="28" width="150" height="164" rx="14" fill="#2C1A12" transform="rotate(-4 155 110)"/>
+                        <rect x="175" y="34" width="145" height="156" rx="14" fill="#FAF6F0" stroke="#8D5B4C" stroke-width="3" transform="rotate(4 245 110)"/>
+                        <circle cx="245" cy="95" r="26" fill="#C58940"/>
+                    </svg>
+                `
+            }
+        ];
+
+        function getMemberObj(id) {
+            return membersData.find(m => m.id === id);
+        }
+
+        // 3. RENDER PROFIL 4 ANGGOTA (GAYA MACOS WINDOW + KARTU "ABOUT ME!" SESUAI GAMBAR)
+        const membersContainer = document.getElementById('members-container');
+        let activeProfileFilter = 'all';
+
+        function renderMembersSection() {
+            const list = activeProfileFilter === 'all'
+                ? membersData
+                : membersData.filter(m => m.id === activeProfileFilter);
+
+            membersContainer.innerHTML = list.map((member, idx) => {
+                const isReverse = member.windowStyle === 'anime-right'; // Seperti gambar ke-4 (Febrianto) di mana kartu About Me di kiri & window foto di kanan
+
+                // Elemen dekorasi atas kartu About Me (Penjepit kertas / menu Cut-Copy-Paste)
+                let topCardDecoration = '';
+                if (member.windowStyle === 'cut-copy-bar') {
+                    topCardDecoration = `
+                        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-xl bg-espresso text-alabaster text-[11px] font-bold shadow-brown-sm mb-3">
+                            <span>Cut</span>
+                            <span class="opacity-40">|</span>
+                            <span>Copy</span>
+                            <span class="opacity-40">|</span>
+                            <span class="text-bronze">Paste</span>
+                            <span class="opacity-40">|</span>
+                            <span>Replace... &#9656;</span>
+                        </div>
+                    `;
+                } else {
+                    topCardDecoration = `
+                        <div class="flex justify-center -mt-9 mb-2">
+                            <div class="w-12 h-7 rounded-t-xl flex items-center justify-center shadow-brown-sm" style="background-color: ${member.clipColor};">
+                                <div class="w-2.5 h-2.5 rounded-full bg-creamPaper"></div>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                // Konten Foto (Jika user sudah upload foto sendiri, tampilkan foto asli; jika belum, tampilkan ilustrasi SVG bawaan)
+                const photoContent = member.customPhotoUrl
+                    ? `<img src="${member.customPhotoUrl}" alt="Foto ${member.nama}" class="w-full h-full object-cover">`
+                    : member.defaultSvg;
+
+                return `
+                    <article class="member-showcase-card bg-alabaster rounded-[2rem] border border-espresso/15 p-5 sm:p-7 shadow-brown-md relative overflow-hidden">
+                        <!-- Dekorasi Bintang Sudut -->
+                        <svg class="w-5 h-5 text-bronze star-twinkle absolute top-4 right-5 pointer-events-none" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 1L14.8 8.8L23 12L14.8 15.2L12 23L9.2 15.2L1 12L9.2 8.8L12 1Z"/>
+                        </svg>
+
+                        <!-- Judul Kecil Ala Referensi ("portofolio") -->
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="font-serif italic font-bold text-xl text-espresso">portofolio <span class="text-bronze text-sm not-italic font-sans">#0${idx + 1}</span></span>
+                            <span class="px-3 py-1 rounded-full bg-sand text-mocha text-xs font-extrabold border border-espresso/10">${member.kelas}</span>
+                        </div>
+
+                        <!-- Layout Gabungan: macOS Window Foto + Kartu ABOUT ME! -->
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
+                            
+                            <!-- Jendela Foto macOS (7 Kolom) -->
+                            <div class="sm:col-span-7 ${isReverse ? 'sm:order-2' : 'sm:order-1'}">
+                                <div class="bg-creamPaper rounded-2xl border border-espresso/20 shadow-mac-win overflow-hidden">
+                                    <!-- Titlebar macOS 3 Titik -->
+                                    <div class="bg-sand px-3.5 py-2.5 border-b border-espresso/10 flex items-center justify-between">
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+                                            <span class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></span>
+                                        </div>
+                                        <span class="text-[10px] font-bold text-mocha truncate">${member.id}_photo.jpg</span>
+                                        <label for="upload-${member.id}" class="cursor-pointer text-[10px] font-extrabold text-caramel hover:text-espresso underline flex items-center gap-1" title="Unggah foto asli dari perangkat">
+                                            <i class="fa-solid fa-camera"></i> Ganti Foto
+                                        </label>
+                                        <input type="file" id="upload-${member.id}" accept="image/*" class="hidden" onchange="handleMemberPhotoUpload(event, '${member.id}')">
+                                    </div>
+
+                                    <!-- Bingkai Foto -->
+                                    <div class="aspect-[4/3] w-full bg-sand overflow-hidden relative group">
+                                        ${photoContent}
+                                        <!-- Overlay tombol ganti foto saat hover -->
+                                        <label for="upload-${member.id}" class="cursor-pointer absolute inset-0 bg-espresso/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-alabaster gap-1.5">
+                                            <i class="fa-solid fa-cloud-arrow-up text-2xl text-bronze"></i>
+                                            <span class="text-xs font-bold">Klik untuk Pasang Foto Asli</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Kartu Kertas "ABOUT ME!" (5 Kolom) -->
+                            <div class="sm:col-span-5 ${isReverse ? 'sm:order-1' : 'sm:order-2'} pt-3 sm:pt-0">
+                                <div class="bg-creamPaper rounded-2xl border border-espresso/15 p-4 sm:p-5 shadow-brown-md relative">
+                                    ${topCardDecoration}
+
+                                    <!-- Badge ABOUT ME! -->
+                                    <div class="text-center mb-3.5">
+                                        <span class="inline-block px-4 py-1 rounded-lg text-xs font-extrabold tracking-wider text-espresso uppercase" style="background-color: ${member.badgeBg};">
+                                            ABOUT ME!
+                                        </span>
+                                    </div>
+
+                                    <!-- Daftar Biodata Persis Sesuai Gambar -->
+                                    <ul class="space-y-2 text-xs sm:text-[13px] text-espresso">
+                                        <li class="flex flex-col border-b border-espresso/10 pb-1.5">
+                                            <span class="text-[10px] font-bold uppercase text-mocha">Nama :</span>
+                                            <span class="font-extrabold tracking-tight">${member.nama}</span>
+                                        </li>
+                                        <li class="flex items-center justify-between border-b border-espresso/10 pb-1.5">
+                                            <span class="text-[11px] font-bold text-mocha">Kelas :</span>
+                                            <span class="font-extrabold">${member.kelas}</span>
+                                        </li>
+                                        <li class="flex flex-col border-b border-espresso/10 pb-1.5">
+                                            <span class="text-[10px] font-bold uppercase text-mocha">Hobi :</span>
+                                            <span class="font-bold text-caramel">${member.hobi}</span>
+                                        </li>
+                                        <li class="flex flex-col border-b border-espresso/10 pb-1.5">
+                                            <span class="text-[10px] font-bold uppercase text-mocha">Food fav :</span>
+                                            <span class="font-bold">${member.foodFav}</span>
+                                        </li>
+                                        <li class="flex flex-col border-b border-espresso/10 pb-1.5">
+                                            <span class="text-[10px] font-bold uppercase text-mocha">Drink fav :</span>
+                                            <span class="font-bold">${member.drinkFav}</span>
+                                        </li>
+                                        <li class="flex flex-col pt-0.5">
+                                            <span class="text-[10px] font-bold uppercase text-mocha">Fav song :</span>
+                                            <span class="font-bold italic text-espresso leading-snug">${member.favSong}</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Bar Tombol Bawah Kartu Anggota -->
+                        <div class="mt-5 pt-4 border-t border-espresso/10 flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-2 text-xs text-mocha">
+                                <i class="fa-solid fa-folder text-bronze"></i>
+                                <span>Portofolio & Tugas XI RPL 2</span>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <button type="button" onclick="selectMemberFilter('${member.id}', true)" class="px-4 py-2 rounded-full bg-espresso text-alabaster text-xs font-bold hover:bg-caramel transition-colors flex items-center gap-1.5">
+                                    <span>Lihat Karya ${member.nama.split(' ')[0]}</span>
+                                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        // Fitur Unggah / Ganti Foto Asli untuk Masing-Masing Anggota
+        function handleMemberPhotoUpload(event, memberId) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const member = getMemberObj(memberId);
+                if (member) {
+                    member.customPhotoUrl = e.target.result;
+                    renderMembersSection();
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+
+        // Filter Tab Profil 4 Anggota
+        document.querySelectorAll('.profile-tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                activeProfileFilter = btn.getAttribute('data-profile-filter');
+                document.querySelectorAll('.profile-tab-btn').forEach(b => {
+                    const active = b.getAttribute('data-profile-filter') === activeProfileFilter;
+                    b.className = active
+                        ? 'profile-tab-btn active px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-espresso text-alabaster shadow-brown-sm transition-all'
+                        : 'profile-tab-btn px-4 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-creamPaper text-espresso border border-espresso/15 hover:bg-caramel hover:text-alabaster transition-all';
+                });
+                renderMembersSection();
+            });
+        });
+
+        renderMembersSection();
+
+        // 4. LOGIKA TEMPAT PORTOFOLIO (FILTER + RENDER + MODAL DETAIL + TAMBAH KARYA)
+        const portfolioGrid = document.getElementById('portfolio-grid');
+        const portfolioCountText = document.getElementById('portfolio-count-text');
+        const resetPortfolioFilterBtn = document.getElementById('reset-portfolio-filter');
+
+        let currentProjCategory = 'all';
+        let currentProjMember = 'all';
+
+        function renderPortfolioCards() {
+            const filtered = portfolioProjects.filter(p => {
+                const catOk = currentProjCategory === 'all' || p.category === currentProjCategory;
+                const memOk = currentProjMember === 'all' || p.memberId === currentProjMember;
+                return catOk && memOk;
+            });
+
+            portfolioCountText.innerHTML = `Menampilkan <strong class="text-espresso">${filtered.length}</strong> dari ${portfolioProjects.length} karya portofolio`;
+            if (currentProjCategory !== 'all' || currentProjMember !== 'all') {
+                resetPortfolioFilterBtn.classList.remove('hidden');
+            } else {
+                resetPortfolioFilterBtn.classList.add('hidden');
+            }
+
+            if (filtered.length === 0) {
+                portfolioGrid.innerHTML = `
+                    <div class="col-span-full bg-sand/70 border border-espresso/15 rounded-3xl p-10 text-center space-y-3">
+                        <i class="fa-solid fa-folder-open text-3xl text-caramel"></i>
+                        <h3 class="font-serif text-xl font-bold text-espresso">Belum Ada Karya di Filter Ini</h3>
+                        <p class="text-sm text-mocha">Silakan pilih kategori lain atau tambahkan karya baru menggunakan tombol di atas.</p>
+                        <button type="button" onclick="resetAllPortfolioFilters()" class="px-5 py-2.5 rounded-full bg-espresso text-alabaster text-xs font-bold">
+                            Tampilkan Semua Karya
+                        </button>
+                    </div>
+                `;
+                return;
+            }
+
+            portfolioGrid.innerHTML = filtered.map(proj => {
+                const author = getMemberObj(proj.memberId);
+                return `
+                    <article class="portfolio-card bg-creamPaper rounded-3xl border border-espresso/15 overflow-hidden shadow-brown-sm hover:shadow-brown-lg flex flex-col justify-between">
+                        <div>
+                            <!-- Header Window Mini macOS -->
+                            <div class="bg-sand px-4 py-2.5 border-b border-espresso/10 flex items-center justify-between">
+                                <div class="flex items-center gap-1.5">
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F56]"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]"></span>
+                                    <span class="w-2.5 h-2.5 rounded-full bg-[#27C93F]"></span>
+                                </div>
+                                <span class="text-[11px] font-bold text-caramel">${proj.category}</span>
+                            </div>
+
+                            <!-- Thumbnail Proyek -->
+                            <div class="h-44 bg-sand overflow-hidden border-b border-espresso/10">
+                                ${proj.visualSvg}
+                            </div>
+
+                            <!-- Isi Kartu -->
+                            <div class="p-6 space-y-3">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="px-2.5 py-1 rounded-full bg-sand text-espresso font-bold border border-espresso/10">
+                                        <i class="fa-solid fa-user-pen text-caramel mr-1"></i> ${author ? author.nama : 'XI RPL 2'}
+                                    </span>
+                                    <span class="font-bold text-mocha">${proj.year}</span>
+                                </div>
+
+                                <h3 class="font-serif text-xl font-bold text-espresso leading-snug">
+                                    ${proj.title}
+                                </h3>
+
+                                <p class="text-xs sm:text-sm text-mocha leading-relaxed">
+                                    ${proj.shortDesc}
+                                </p>
+
+                                <div class="flex flex-wrap gap-1.5 pt-1">
+                                    ${proj.tech.map(t => `<span class="px-2.5 py-0.5 rounded-md bg-alabaster border border-espresso/10 text-[11px] font-semibold text-espresso">${t}</span>`).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2">
+                            <button type="button" onclick="openProjectDetail(${proj.id})" class="w-full py-3 px-4 rounded-full bg-espresso text-alabaster text-xs sm:text-sm font-bold hover:bg-caramel transition-colors flex items-center justify-center gap-2">
+                                <span>Lihat Detail Proyek</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-bronze"></i>
+                            </button>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function updatePortfolioFilterUI() {
+            document.querySelectorAll('.proj-cat-btn').forEach(btn => {
+                const active = btn.getAttribute('data-proj-cat') === currentProjCategory;
+                btn.className = active
+                    ? 'proj-cat-btn active px-4 py-2 rounded-full text-xs font-bold bg-espresso text-alabaster shadow-brown-sm transition-all'
+                    : 'proj-cat-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-caramel hover:text-alabaster transition-all';
+            });
+
+            document.querySelectorAll('.proj-member-btn').forEach(btn => {
+                const active = btn.getAttribute('data-proj-member') === currentProjMember;
+                btn.className = active
+                    ? 'proj-member-btn active px-4 py-2 rounded-full text-xs font-bold bg-caramel text-alabaster shadow-brown-sm transition-all'
+                    : 'proj-member-btn px-4 py-2 rounded-full text-xs font-bold bg-creamPaper text-espresso border border-espresso/10 hover:bg-espresso hover:text-alabaster transition-all';
+            });
+        }
+
+        document.querySelectorAll('.proj-cat-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentProjCategory = btn.getAttribute('data-proj-cat');
+                updatePortfolioFilterUI();
+                renderPortfolioCards();
+            });
+        });
+
+        document.querySelectorAll('.proj-member-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentProjMember = btn.getAttribute('data-proj-member');
+                updatePortfolioFilterUI();
+                renderPortfolioCards();
+            });
+        });
+
+        function selectMemberFilter(memberId, scrollToPortfolio = false) {
+            currentProjCategory = 'all';
+            currentProjMember = memberId;
+            updatePortfolioFilterUI();
+            renderPortfolioCards();
+            if (scrollToPortfolio) {
+                document.getElementById('tempat-portofolio').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function resetAllPortfolioFilters() {
+            currentProjCategory = 'all';
+            currentProjMember = 'all';
+            updatePortfolioFilterUI();
+            renderPortfolioCards();
+        }
+
+        resetPortfolioFilterBtn.addEventListener('click', resetAllPortfolioFilters);
+        renderPortfolioCards();
+
+        // Modal Detail Proyek
+        const projectModal = document.getElementById('project-modal');
+        document.getElementById('project-modal-backdrop').addEventListener('click', closeProjectModal);
+
+        function openProjectDetail(id) {
+            const proj = portfolioProjects.find(p => p.id === id);
+            if (!proj) return;
+            const author = getMemberObj(proj.memberId);
+
+            document.getElementById('modal-proj-cat').textContent = proj.category;
+            document.getElementById('modal-proj-visual').innerHTML = proj.visualSvg;
+            document.getElementById('modal-proj-author').textContent = `Karya: ${author ? author.nama : 'XI RPL 2'} (${author ? author.kelas : 'XI RPL 2'})`;
+            document.getElementById('modal-proj-year').textContent = `Tahun ${proj.year}`;
+            document.getElementById('modal-proj-title').textContent = proj.title;
+            document.getElementById('modal-proj-desc').textContent = proj.fullDesc;
+            document.getElementById('modal-proj-tech').innerHTML = proj.tech.map(t =>
+                `<span class="px-3.5 py-1 rounded-full bg-sand text-espresso text-xs font-bold border border-espresso/10">${t}</span>`
+            ).join('');
+
+            projectModal.classList.remove('hidden');
+            projectModal.classList.add('flex');
+        }
+
+        function closeProjectModal() {
+            projectModal.classList.add('hidden');
+            projectModal.classList.remove('flex');
+        }
+
+        // Modal Tambah Karya Baru Interaktif
+        const addProjectModal = document.getElementById('add-project-modal');
+        function openAddProjectModal() {
+            addProjectModal.classList.remove('hidden');
+            addProjectModal.classList.add('flex');
+        }
+        function closeAddProjectModal() {
+            addProjectModal.classList.add('hidden');
+            addProjectModal.classList.remove('flex');
+        }
+
+        document.getElementById('add-project-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('new-proj-title').value.trim();
+            const memberId = document.getElementById('new-proj-member').value;
+            const category = document.getElementById('new-proj-cat').value;
+            const desc = document.getElementById('new-proj-desc').value.trim();
+            const techRaw = document.getElementById('new-proj-tech').value.trim();
+            const techArr = techRaw.split(',').map(s => s.trim()).filter(Boolean);
+
+            const newItem = {
+                id: Date.now(),
+                title,
+                category,
+                memberId,
+                year: '2026',
+                shortDesc: desc,
+                fullDesc: desc,
+                tech: techArr.length ? techArr : ['HTML', 'CSS', 'JS'],
+                visualSvg: `
+                    <svg viewBox="0 0 400 220" class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="400" height="220" fill="#2C1A12"/>
+                        <circle cx="320" cy="60" r="85" fill="#C58940" opacity="0.25"/>
+                        <rect x="60" y="38" width="280" height="144" rx="16" fill="#FAF6F0"/>
+                        <rect x="85" y="64" width="140" height="16" rx="8" fill="#8D5B4C"/>
+                        <rect x="85" y="92" width="210" height="12" rx="6" fill="#5C3D2E" opacity="0.5"/>
+                        <rect x="85" y="124" width="105" height="32" rx="16" fill="#2C1A12"/>
+                    </svg>
+                `
+            };
+
+            portfolioProjects.unshift(newItem);
+            this.reset();
+            closeAddProjectModal();
+            resetAllPortfolioFilters();
+            document.getElementById('tempat-portofolio').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 5. PEMUTAR MELODI LAGU FAVORIT KELOMPOK (WEB AUDIO API)
+        let audioCtx = null;
+        let isPlayingSong = false;
+        let songTimer = null;
+        let currentNotes = [329.63, 392.00, 440.00, 493.88];
+
+        function playMemberSong(owner, songTitle, notes) {
+            document.getElementById('now-playing-owner').textContent = `Fav Song • ${owner}`;
+            document.getElementById('now-playing-title').textContent = songTitle;
+            currentNotes = notes;
+            startMelodyLoop();
+        }
+
+        function startMelodyLoop() {
+            stopMelodyLoop();
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            isPlayingSong = true;
+            document.getElementById('synth-play-icon').className = 'fa-solid fa-pause';
+
+            let step = 0;
+            const playNote = () => {
+                if (!isPlayingSong) return;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                osc.type = 'sine';
+                osc.frequency.setValueAtTime(currentNotes[step % currentNotes.length], audioCtx.currentTime);
+                gain.gain.setValueAtTime(0.08, audioCtx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 0.45);
+                osc.connect(gain);
+                gain.connect(audioCtx.destination);
+                osc.start();
+                osc.stop(audioCtx.currentTime + 0.46);
+                step++;
+            };
+            playNote();
+            songTimer = setInterval(playNote, 500);
+        }
+
+        function stopMelodyLoop() {
+            isPlayingSong = false;
+            if (songTimer) clearInterval(songTimer);
+            document.getElementById('synth-play-icon').className = 'fa-solid fa-play';
+        }
+
+        function toggleAudioPreview() {
+            if (isPlayingSong) {
+                stopMelodyLoop();
+            } else {
+                startMelodyLoop();
+            }
+        }
+
+        // 6. MENU MOBILE & FORM KONTAK
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const hamburgerIcon = document.getElementById('hamburger-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            const hidden = mobileMenu.classList.toggle('hidden');
+            hamburgerIcon.className = hidden ? 'fa-solid fa-bars text-lg' : 'fa-solid fa-xmark text-lg';
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                hamburgerIcon.className = 'fa-solid fa-bars text-lg';
+            });
+        });
+
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const sender = document.getElementById('sender-name').value.trim();
+            const target = document.getElementById('target-member').value;
+            const toast = document.getElementById('contact-toast');
+            document.getElementById('contact-toast-text').textContent = `Terima kasih ${sender}! Pesan untuk ${target} telah diterima.`;
+            toast.classList.remove('hidden');
+            this.reset();
+            setTimeout(() => toast.classList.add('hidden'), 5000);
+        });
+    </script>
+</body>
+</html>
+
